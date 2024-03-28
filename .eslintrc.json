@@ -8,18 +8,15 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "extends": [
-    "prettier"
-    // prettier 需要放在最后
-  ],
+  "extends": ["prettier"],
   "plugins": ["prettier"],
   "rules": {
-    // 覆盖extends的规则
     "@typescript-eslint/no-unused-vars": "off",
     "prettier/prettier": [
       "error",
       {
-        "printWidth": 80
+        "printWidth": 80,
+        "endOfLine": "auto"
       }
     ]
   }
