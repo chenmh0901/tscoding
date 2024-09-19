@@ -1,9 +1,7 @@
-// 3. 并发请求
 
-function fetchDomain(domain) {
-  return fetch(`/cdn/domain/${domain}`)
-}
 
-const domains = ['https://qiniu.com', '...']
+var name = 'tom'
+var a = { name: name }
+var b = Object.assign(a)
 
-function makeRequest(domains, limit) { }
+console.log(b.name)
