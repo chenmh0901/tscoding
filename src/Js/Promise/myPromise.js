@@ -13,6 +13,7 @@ function execFunctionWithCatchError(fn, value, resolve, reject) {
 
 class MyPromise {
   constructor(executor) {
+    // 当回调 resolve 或者 reject 时改变 Promise 状态
     this.status = PROMISE_STATUS_PENDING
     this.value = undefined
     this.reason = undefined
@@ -136,17 +137,4 @@ class MyPromise {
   }
 }
 
-let promise = new MyPromise((resolve, reject) => {
-  resolve('success')
-  // reject('fail')
-})
-
-promise
-  .then((res) => {
-    console.log('res1', res)
-  })
-  .catch((err) => {
-    console.log('catch', err)
-  }).finally(()=>{
-    console.log('finally')
-  })
+module.exports = MyPromise
