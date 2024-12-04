@@ -24,7 +24,7 @@ class MyPromise {
       if (this.status === PROMISE_STATUS_PENDING) {
         // 微任务执行栈
         queueMicrotask(() => {
-          // 当状态不是 pending 时，直接返回
+          // 当状态不是 pending 时，直接返回 状态只会被改变一次，多个resolve只保留第一个
           if (this.status !== PROMISE_STATUS_PENDING) return
           this.status = PROMISE_STATUS_FULFILLED
           this.value = value
